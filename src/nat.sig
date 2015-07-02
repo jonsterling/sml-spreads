@@ -8,7 +8,6 @@ sig
 
   val into : t view -> t
   val out : t -> t view
-  val map : ('a -> 'b) -> 'a view -> 'b view
 
   exception Negative
   val fromInt : int -> t
@@ -20,4 +19,6 @@ sig
   include NAT
   val zero : t
   val succ : t -> t
+
+  val mapView : ('a -> 'b) -> 'a view -> 'b view
 end

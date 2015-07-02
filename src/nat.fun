@@ -6,9 +6,6 @@ struct
       ZERO
     | SUCC of 'a
 
-  fun map f ZERO = ZERO
-    | map f (SUCC x) = SUCC (f x)
-
   fun into ZERO = 0
     | into (SUCC x) = x + 1
 
@@ -32,6 +29,9 @@ struct
 
   val zero = into ZERO
   fun succ x = into (SUCC x)
+
+  fun mapView f ZERO = ZERO
+    | mapView f (SUCC x) = SUCC (f x)
 end
 
 structure NatUtil = NatUtil (Nat)
