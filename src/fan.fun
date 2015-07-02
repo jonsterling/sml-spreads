@@ -3,7 +3,9 @@ struct
   type 'a forest = 'a list
 
   type elem = elem
-  type path = Nat.t ChoiceSequence.t
+
+  structure Path = FunctionalChoiceSequence
+  type path = Nat.t Path.t
 
   datatype 'a front = NODE of elem * 'a forest
   datatype t = SUP of t front

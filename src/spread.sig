@@ -1,7 +1,9 @@
 signature SPREAD =
 sig
   type elem
-  type path = Nat.t ChoiceSequence.t
+
+  structure Path : CHOICE_SEQUENCE
+  type path = Nat.t Path.t
 
   type 'a forest
   datatype 'a front = NODE of elem * 'a forest

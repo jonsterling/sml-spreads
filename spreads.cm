@@ -1,9 +1,9 @@
 Library
-  signature CHOICE_SEQUENCE
-  structure ChoiceSequence
-
   signature NAT
   structure Nat
+
+  signature CHOICE_SEQUENCE
+  structure ChoiceSequence
 
   signature SPREAD
   signature FAN
@@ -14,7 +14,7 @@ is
   src/choice_sequence.sig
   src/choice_sequence.fun
   src/nat.sig
-  src/nat.sml
+  src/nat.fun
   src/spread.sig
   src/spread.fun
   src/fan.sig
