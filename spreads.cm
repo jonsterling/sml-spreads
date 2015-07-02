@@ -1,0 +1,23 @@
+Library
+  signature CHOICE_SEQUENCE
+  structure ChoiceSequence
+
+  signature NAT
+  structure Nat
+
+  signature SPREAD
+  signature FAN
+  functor InfinitarySpread
+  functor Fan
+is
+  $/basis.cm
+  src/choice_sequence.sig
+  src/choice_sequence.fun
+  src/nat.sig
+  src/nat.sml
+  src/spread.sig
+  src/spread.fun
+  src/fan.sig
+  src/fan.fun
+  src/susp.sig
+  src/susp.sml
