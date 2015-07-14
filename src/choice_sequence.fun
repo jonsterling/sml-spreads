@@ -7,6 +7,14 @@ struct
   datatype 'a front = CONS of 'a * 'a t
   withtype 'a t = 'a front susp
   val front = force
+
+  fun nth alpha n =
+    let
+      fun go 0 (CONS (x,xs)) = x
+        | go i (CONS (_, xs)) = go (i - 1) (front xs)
+    in
+      go (Nat.asInt n) (front alpha)
+    end
 end
 
 (* An implementation of choice sequences with O(1) access. *)
@@ -31,6 +39,8 @@ struct
              | Nat.SUCC j => xs j
         end
     end
+
+  fun nth alpha n = alpha n
 end
 
 functor ChoiceSequenceUtil (CS : CHOICE_SEQUENCE) : CHOICE_SEQUENCE_UTIL =
