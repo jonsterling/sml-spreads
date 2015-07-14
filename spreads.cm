@@ -4,6 +4,7 @@ Library
 
   signature CHOICE_SEQUENCE
   structure ChoiceSequence
+  structure FunctionalChoiceSequence
 
   signature SPREAD
   signature FAN
