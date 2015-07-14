@@ -15,6 +15,15 @@ struct
     in
       go (Nat.asInt n) (front alpha)
     end
+
+  fun unfold f =
+    let
+      fun go n =
+        CONS (f n, delay (fn () => go (Nat.into (Nat.SUCC n))))
+    in
+      delay (fn () =>
+        go (Nat.fromInt 0))
+    end
 end
 
 (* An implementation of choice sequences with O(1) access. *)
@@ -25,6 +34,8 @@ struct
 
   fun front alpha =
     CONS (alpha NatUtil.zero, alpha o NatUtil.succ)
+
+  fun unfold alpha = alpha
 
   fun delay f =
     let

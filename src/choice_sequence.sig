@@ -7,6 +7,7 @@ sig
   val delay : (unit -> 'a front) -> 'a t
 
   val nth : 'a t -> Nat.t -> 'a
+  val unfold : (Nat.t -> 'a) -> 'a t
 end
 
 signature CHOICE_SEQUENCE_UTIL =
